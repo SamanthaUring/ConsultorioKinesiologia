@@ -12,14 +12,14 @@
     <h2>novedades</h2>
     <ul class="lista-novedades">
       {{#each novedades}}
-      <li><a href="#Especialistas" data-bs-toggle="#Modal{{id}}" data-bs-target="examplemodal"><img
-            src="images/osteochiquito.jpg">{{titulo}}</a></li>
+      <li><a href="#Especialistas" data-bs-toggle="#Modal" data-bs-target="examplemodal{{id}}">
+        <img src="images/osteochiquito.jpg">{{titulo}}</a></li>
       {{each}}
     </ul>
 
   </div>
   {{#each novedades}}
-  <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModal{{id}}" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -27,8 +27,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h4>{{subtitulo}}</h4>
-          <p>{{cuerpo}}</p>
+      {{cuerpo}}
         </div>
       </div>
     </div>

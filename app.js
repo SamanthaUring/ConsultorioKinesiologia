@@ -14,6 +14,7 @@ var adminRouter = require('./routes/admin/novedades');
 
 var app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -24,18 +25,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use (session ({
+app.use(session({
   secret: 'cursotn',
   resave: false,
   saveUninitialized: true
-}))
+}));
 
 secured = async (req, res, next) => {
   try {
     console.log(req,session.id_usuario);
     if (req.session.id_usuario) {
-      next ();
-    }else {
+      next();
+    } else {
       res.redirec('/admin/login')
     }
   } catch (error) {
@@ -47,6 +48,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
