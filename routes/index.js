@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var nodemailer = require("nodemailer");
 var novedadesModel = require('../models/novedadesModel');
+const { signedCookie } = require("cookie-parser");
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
@@ -18,9 +19,9 @@ router.post("/", async (req, res, next) => {
   console.log(req.body); // estoy capturando datos?
 
   var nombre = req.body.nombre;
+  var apellido = req.body.apellido;
   var email = req.body.email;
-  var dia = req.body.dia;
-  var hora = req.body.hora;
+  var telefono = req.body.telefono;
   var mensaje = req.body.mensaje;
 
   var obj = {

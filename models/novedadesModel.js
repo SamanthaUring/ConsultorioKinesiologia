@@ -1,4 +1,4 @@
-const pool = require('./bd');
+var pool = require('./bd');
 
 async function getNovedades() {
     var query = 'select * from novedades';
@@ -12,5 +12,6 @@ async function deleteNovedadesById(id) {
     return rows;
 }
 
+module.exports = {getNovedades, deleteNovedadesById}
 
-module.exports = { getNovedades, deleteNovedadesById }
+module.exports = { getNovedades }
