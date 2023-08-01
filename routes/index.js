@@ -18,16 +18,16 @@ router.post("/", async (req, res, next) => {
 
   console.log(req.body); // estoy capturando datos?
 
-  var nombre = req.body.nombre;
-  var apellido = req.body.apellido;
-  var email = req.body.email;
-  var telefono = req.body.telefono;
-  var mensaje = req.body.mensaje;
+  var Nombre = req.body.Nombre;
+  var Apellido = req.body.Apellido;
+  var EMAIL = req.body.EMAIL;
+  var Telefono = req.body.Telefono;
+  var Mensaje = req.body.Mensaje;
 
   var obj = {
     to: "samyuring@hotmail.com",
     subject: "Contacto desde la Web",
-    html: nombre + " " + dia + hora + " se contacto a travez y quiere mas info a este corre: " + email + ". <br> Además, hizo el siguiente comentario: " + mensaje + ". <br>",
+    html: Nombre + " " + Apellido + " " + " se contacto a travez y quiere mas info a este corre: " + EMAIL + ". <br> Además, hizo el siguiente comentario: " + Mensaje + ". <br>",
   }; // cierra var obj
 
   var transporter = nodemailer.createTransport({
