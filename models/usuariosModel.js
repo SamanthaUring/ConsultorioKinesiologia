@@ -1,3 +1,4 @@
+
 var pool = require('./bd');
 var md5 = require('md5');
 
@@ -13,6 +14,7 @@ async function getUserAndPassword(user, password) {
 }
 
 module.exports = { getUserAndPassword }
+
 
        
       

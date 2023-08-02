@@ -57,17 +57,7 @@ secured = async (req, res, next) => {
   }
 }
 
-app.get("/", function(req, res) {
-  var conocido = Boolean(req.session.nombre);
 
-  res.render("index",{
-    title: "Sesiones en Express.js",
-    conocido: conocido,
-    nombre: req.session.nombre
-  });
-
-
-});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -91,3 +81,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
