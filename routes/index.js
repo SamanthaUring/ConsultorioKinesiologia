@@ -23,7 +23,7 @@ router.post('/', async(req, res, next) => {
   var mensaje = req.body.mensaje;
 
   var obj = {
-    to: 'luciadominguezsartor@gmail.com',
+    to: 'samyuring@hotmail.com',
     subjet: 'CONTACTO WEB',
     html: nombre + " " + apellido + " se contacto a traves de la web y quiere mas info a este correo: " + email + ". <br> Además, hizo el siguiente comentario: " + mensaje + ". <br> Su tel es " + telefono };
 
