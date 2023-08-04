@@ -14,4 +14,4 @@
           }
       }
       
-      module.exports = { getUserAndPassword }
+      module.exports = { getUserAndPassword };
