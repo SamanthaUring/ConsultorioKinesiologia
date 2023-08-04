@@ -13,4 +13,3 @@ async function deleteNovedadesById(id) {
 }
 
 module.exports = {getNovedades, deleteNovedadesById}
-

@@ -6,94 +6,66 @@
     </div>
   </div>
 </div>
-
 <div class="row my-3">
   <div id="#novedades" class="col-md-5 offset-md-2 py-3">
     <h2>novedades</h2>
+    {{#each novedades}}
     <ul class="lista-novedades">
-      {{#each novedades}}
-      <li><a href="#Especialistas" data-bs-toggle="#Modal" data-bs-target="examplemodal{{id}}">
-          <img src="images/osteochiquito.jpg">{{titulo}}</a></li>
-      {{each}}
+      <li>
+        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}">
+          <img src="images/osteochiquito.jpg">{{Titulo}}</a>
+      </li>
+      {{/each}}
     </ul>
-
   </div>
   {{#each novedades}}
-  <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModal{{id}}" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          {{cuerpo}}
-        </div>
+ <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{Titulo}} </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        {{cuerpo}}
+      </div>
+      
     </div>
   </div>
-  {{/each}}
-
+</div>
+{{/each}}
   <div class="col-md-3 my-3">
-
     <div class="rounded py-5 testimonios">
-
       <h2 class="text-center">Testimonios</h2>
-
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-
         <div class="carousel-indicators">
-
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
-
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
             aria-label="Slide 2"></button>
-
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
             aria-label="Slide 3"></button>
-
         </div>
-
         <div class="carousel-inner">
-
           <div class="carousel-item active">
-
             <div class="testimonio">
-
               <h5>"Excelente tratamiento!
                 aliviaron mi dolor!"</h5>
-
               <p>Francisco, Monte Grande</p>
-
             </div>
-
           </div>
-
           <div class="carousel-item">
-
             <div class="testimonio">
-
               <h5>"super recomendable!!"</h5>
-
               <p>Flavia, Devotoe</p>
-
             </div>
-
           </div>
-
           <div class="carousel-item">
-
             <div class="testimonio">
-
               <h5>"exelentes profesionales!!"</h5>
-
               <p>Eric, Mataderos</p>
-
             </div>
-
           </div>
-
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -107,9 +79,7 @@
 
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
           data-bs-slide="next">
-
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
           <span class="visually-hidden">Next</span>
 
         </button>

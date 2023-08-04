@@ -5,17 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require('dotenv').config();
-var pool = require('./models/bd')
 var session = require('express-session');
-
-var session = require("express-session")
- 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
-const async = require('hbs/lib/async');
 
 var app = express();
 
@@ -29,17 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-//select
-//pool.query('select * from empleados').then(function(resultados){
-//  console.log(resultados)
-//});
-
-
-
 app.use(session({
-  secret: "cursotn",
+  secret: 'jauendyushsudhekmd12nu98evlaslaks',
   resave: false,
   saveUninitialized: true
 }));
@@ -56,18 +42,6 @@ secured = async (req, res, next) => {
     console.log(error);
   }
 }
-
-app.get("/", function(req, res) {
-  var conocido = Boolean(req.session.nombre);
-
-  res.render("index",{
-    title: "Sesiones en Express.js",
-    conocido: conocido,
-    nombre: req.session.nombre
-  });
-
-
-});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -91,4 +65,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
