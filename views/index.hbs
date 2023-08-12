@@ -10,30 +10,31 @@
   <div id="#novedades" class="col-md-5 offset-md-2 py-3">
     <h2>novedades</h2>
     <ul class="lista-novedades">
-       {{#each novedades}}
+    
       <li>
-        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}">
-          <img src="images/osteochiquito.jpg">{{Titulo}}</a>
+        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="images/osteochiquito.jpg"> </a>
       </li>
-      {{/each}}
+ 
     </ul>
   </div>
-  {{#each novedades}}
- <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">{{Titulo}} </h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        {{cuerpo}}
+         <h5></h5>                    
+         <p></p>
       </div>
       
     </div>
   </div>
 </div>
-{{/each}}
+
   <div class="col-md-3 my-3">
     <div class="rounded py-5 testimonios">
       <h2 class="text-center">Testimonios</h2>
@@ -169,6 +170,7 @@
     </div>
   </div>
   <div id="#Contactanos" class="col-md-6 mt-4 mt-sm-0">
+    
     <h2>contactanos</h2>
     <form class="row g-3" action="/" method="post">
       <div class="col-md-6">
@@ -195,6 +197,7 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
       </div>
     </form>
+     <p></p>
   </div>
 </div>
 <div id="sidebar-footer" class="footer-widgets widget-area" role="complementary">
