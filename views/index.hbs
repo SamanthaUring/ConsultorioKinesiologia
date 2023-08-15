@@ -10,31 +10,31 @@
   <div id="#novedades" class="col-md-5 offset-md-2 py-3">
     <h2>novedades</h2>
     <ul class="lista-novedades">
-    
+    {{#each novedades}}
       <li>
-        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <img src="images/osteochiquito.jpg"> </a>
+        <a href="#novedades"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="images/osteochiquito.jpg">{{titulo}} </a>
       </li>
- 
+ {{/each}}
     </ul>
   </div>
-  
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  {{#each novedades}}
+ <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-         <h5></h5>                    
-         <p></p>
+         <h5> {{subtitulo}} </h5>
+         <p>{{cuerpo}}</p>
       </div>
       
     </div>
   </div>
 </div>
-
+ {{/each}}
   <div class="col-md-3 my-3">
     <div class="rounded py-5 testimonios">
       <h2 class="text-center">Testimonios</h2>

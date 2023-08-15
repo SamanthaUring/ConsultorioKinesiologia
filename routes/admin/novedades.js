@@ -18,10 +18,7 @@ router.get('/', async function (req, res, next) {
                 height: 50,
                 crop: 'fill'
             });
-            return {
-                ...novedad, 
-                imagen
-            }
+            
         } else {
             return {
                 ...novedad,
