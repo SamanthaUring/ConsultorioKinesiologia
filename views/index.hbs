@@ -12,8 +12,8 @@
     <ul class="lista-novedades">
     {{#each novedades}}
       <li>
-        <a href="#novedades"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <img src="images/osteochiquito.jpg">{{titulo}} </a>
+        <a href="javascrip:void(0)"  data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}">
+          <img src="{{imagen}}"> {{titulo}} </a>
       </li>
  {{/each}}
     </ul>
@@ -27,6 +27,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+         <img src="{{imagen}}">
          <h5> {{subtitulo}} </h5>
          <p>{{cuerpo}}</p>
       </div>
