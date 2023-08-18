@@ -1,15 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var novedadesModel = require('../../models/novedadesModel');
-
 var util = require('util');
 var cloudinary = require('cloudinary').v2;
+
 const uploader = util.promisify(cloudinary.uploader.upload);
 const destroy = util.promisify(cloudinary.uploader.destroy);
 
 
 router.get('/', async function (req, res, next) {
-
     var novedades = await novedadesModel.getNovedades();
 
     novedades = novedades.map(novedad => {
@@ -19,7 +18,10 @@ router.get('/', async function (req, res, next) {
                 height: 50,
                 crop: 'fill'
             });
-            
+            return {
+                ...novedad, 
+                imagen
+            }
         } else {
             return {
                 ...novedad,
